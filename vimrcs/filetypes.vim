@@ -1,4 +1,9 @@
 """"""""""""""""""""""""""""""
+" => Source Code Files
+""""""""""""""""""""""""""""""
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp match BadWhitespace /\s\+$/
+
+""""""""""""""""""""""""""""""
 " => Python section
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
@@ -23,6 +28,11 @@ au FileType python map <buffer> <leader>D ?def
 " => C++ section
 """"""""""""""""""""""""""""""
 au FileType cpp setlocal shiftwidth=2 softtabstop=2 expandtab
+
+""""""""""""""""""""""""""""""
+" => Rust section
+""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.rs set filetype=rust
 
 
 """"""""""""""""""""""""""""""
@@ -73,6 +83,8 @@ if exists('$TMUX')
     endif
 endif
 
+au FileType sh setlocal shiftwidth=4 softtabstop=4 expandtab
+
 
 """"""""""""""""""""""""""""""
 " => Twig section
@@ -84,3 +96,15 @@ autocmd BufRead *.twig set syntax=html filetype=html
 " => Markdown
 """"""""""""""""""""""""""""""
 let vim_markdown_folding_disabled = 1
+
+
+""""""""""""""""""""""""""""""
+" => Vim
+""""""""""""""""""""""""""""""
+" automatically source vimrc when changes are made
+" see also myconfig for remaps to edit and source vimrc
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
+

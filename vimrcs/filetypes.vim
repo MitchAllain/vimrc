@@ -36,6 +36,13 @@ autocmd BufNewFile,BufRead *.rs set filetype=rust
 
 
 """"""""""""""""""""""""""""""
+" => YAML section
+""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.yaml,*.yml,*.rosinstall set filetype=yaml
+
+
+
+""""""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
 au FileType javascript call JavaScriptFold()
@@ -75,14 +82,6 @@ au FileType gitcommit call setpos('.', [0, 1, 1, 0])
 """"""""""""""""""""""""""""""
 " => Shell section
 """"""""""""""""""""""""""""""
-if exists('$TMUX') 
-    if has('nvim')
-        set termguicolors
-    else
-        set term=screen-256color 
-    endif
-endif
-
 au FileType sh setlocal shiftwidth=4 softtabstop=4 expandtab
 
 

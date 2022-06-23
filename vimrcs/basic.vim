@@ -134,14 +134,26 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable
 
+if exists('$TMUX') 
+    if has('nvim')
+        set termguicolors
+    else
+        set term=screen-256color 
+    endif
+endif
+
+
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
 try
-    " colorscheme flattened_dark
-    colorscheme solarized
+    if has('nvim')
+        colorscheme NeoSolarized
+    else
+        colorscheme solarized
+    endif
 catch
 endtry
 

@@ -36,6 +36,11 @@ autocmd BufNewFile,BufRead *.rs set filetype=rust
 
 
 """"""""""""""""""""""""""""""
+" => IEC 61131-3 ST section
+""""""""""""""""""""""""""""""
+au BufNewFile,BufRead *.st,*.ST set filetype=stplc
+
+""""""""""""""""""""""""""""""
 " => YAML section
 """"""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.yaml,*.yml,*.rosinstall set filetype=yaml

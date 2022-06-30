@@ -37,6 +37,24 @@ let g:ale_lint_on_enter = 0
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
+nnoremap <silent> <leader>g :GitGutterToggle<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => markdownpreview
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set to 1, nvim will open the preview window after entering the markdown buffer
+let g:mkdp_auto_start = 1
+
+" set to 1, echo preview page url in command line when open preview page
+let g:mkdp_echo_preview_url = 1
+
+" specify browser to open preview page
+let g:mkdp_browser = 'google-chrome'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim surround
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType markdown let b:surround_105 = "*\r*" " i = 105
+autocmd FileType markdown let b:surround_98 = "**\r**" " b = 98
+autocmd FileType markdown let b:surround_99 = "```\n\r\n```" " b = 98
 

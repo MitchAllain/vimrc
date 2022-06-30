@@ -34,6 +34,10 @@ au FileType cpp setlocal shiftwidth=2 softtabstop=2 expandtab
 """"""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.rs set filetype=rust
 
+""""""""""""""""""""""""""""""
+" => XML section
+""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.launch set filetype=xml
 
 """"""""""""""""""""""""""""""
 " => IEC 61131-3 ST section

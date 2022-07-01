@@ -341,6 +341,9 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+" Select recently pasted text
+" https://vim.fandom.com/wiki/Selecting_your_pasted_text
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

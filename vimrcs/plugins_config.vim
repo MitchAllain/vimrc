@@ -4,7 +4,8 @@
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" not a big fan of stepping on this built-in, but I do need this mapping
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -57,4 +58,9 @@ let g:mkdp_browser = 'google-chrome'
 autocmd FileType markdown let b:surround_105 = "*\r*" " i = 105
 autocmd FileType markdown let b:surround_98 = "**\r**" " b = 98
 autocmd FileType markdown let b:surround_99 = "```\n\r\n```" " b = 98
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-showmarks
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>m :SignatureToggle<cr>
 

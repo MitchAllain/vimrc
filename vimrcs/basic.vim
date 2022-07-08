@@ -134,30 +134,23 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable
 
-if exists('$TMUX') 
-    if has('nvim')
-        set termguicolors
-    else
-        set term=screen-256color 
-    endif
+" NeoSolarized works with neovim/vim but requires truecolor
+" support from the terminal, usually indicated by $COLORTERM
+if $COLORTERM == 'truecolor'
+    set termguicolors
+    colorscheme NeoSolarized
+else
+    colorscheme solarized
 endif
-
+ 
+" Make bg transparent
+set background=dark
+hi Normal ctermbg=NONE guibg=NONE
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
-
-try
-    if has('nvim')
-        colorscheme NeoSolarized
-    else
-        colorscheme solarized
-    endif
-catch
-endtry
-
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -233,6 +226,15 @@ map <silent> <leader><cr> :setlocal hlsearch!<cr>
 " map <C-k> <C-W>k
 " map <C-h> <C-W>h
 " map <C-l> <C-W>l
+
+" Fuzzy buffer searching
+map <leader>b :Buffers<cr>
+
+" testing tab navigation with leader then num
+map <leader>1 1gt
+map <leader>2 2gt
+map <leader>3 3gt
+map <leader>4 4gt
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT

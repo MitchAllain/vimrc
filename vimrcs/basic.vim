@@ -140,7 +140,9 @@ if $COLORTERM == 'truecolor'
     set termguicolors
     colorscheme NeoSolarized
 else
-    colorscheme solarized
+    " colorscheme solarized
+    " This seems to work for some odd reason on mac terminal.app
+    colorscheme NeoSolarized
 endif
  
 " Make bg transparent

@@ -28,6 +28,13 @@ au FileType python map <buffer> <leader>D ?def
 " => C++ section
 """"""""""""""""""""""""""""""
 au FileType cpp setlocal shiftwidth=2 softtabstop=2 expandtab
+au FileType cpp let b:dispatch = 'make -C build'
+" au FileType cpp nnoremap <leader>c :Dispatch! make -C build<cr>
+
+""""""""""""""""""""""""""""""
+" => CMake section
+""""""""""""""""""""""""""""""
+au filetype cmake let b:dispatch = 'mkdir build; cd build; cmake ..'
 
 """"""""""""""""""""""""""""""
 " => Rust section

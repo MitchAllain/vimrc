@@ -127,6 +127,11 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+nnoremap <M-J> :resize +5<cr>
+nnoremap <M-K> :resize -5<cr>
+nnoremap <M-H> :vertical resize +5<cr>
+nnoremap <M-L> :vertical resize -5<cr>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts

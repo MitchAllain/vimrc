@@ -7,6 +7,10 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 " not a big fan of stepping on this built-in, but I do need this mapping
 " nnoremap <C-f> :NERDTreeFind<CR>
 
+" disable these default keymaps, since they
+" conflict with my vim/tmux navigation scheme
+let g:NERDTreeMapJumpNextSibling = ''
+let g:NERDTreeMapJumpPrevSibling = ''
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker and linter)

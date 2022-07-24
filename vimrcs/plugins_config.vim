@@ -48,7 +48,8 @@ nnoremap <silent> <leader>g :GitGutterToggle<cr>
 " => markdownpreview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set to 1, nvim will open the preview window after entering the markdown buffer
-let g:mkdp_auto_start = 1
+" default: 0
+" let g:mkdp_auto_start = 1
 
 " set to 1, echo preview page url in command line when open preview page
 let g:mkdp_echo_preview_url = 1

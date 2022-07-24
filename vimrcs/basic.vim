@@ -197,6 +197,10 @@ set tabstop=4
 " this means equal to tabstop
 set shiftwidth=0
 
+" when all else fails, quickly toggle between tabwidths
+nnoremap <leader>t2 :setlocal shiftwidth=2 softtabstop=2 expandtab<cr>
+nnoremap <leader>t4 :setlocal shiftwidth=4 softtabstop=4 expandtab<cr>
+
 " only when set wrap
 set linebreak
 set textwidth=500

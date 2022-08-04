@@ -209,14 +209,20 @@ set autoindent
 set smartindent
 set nowrap
 
+set colorcolumn=80,100
+hi ColorColumn ctermbg=grey guibg=#002b36
+
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+vnoremap <silent> * :<C-u>call VisualSelection('', '', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '', '')<CR>?<C-R>=@/<CR><CR>
+
+" jump into ripgrep search with visual selection
+vnoremap <leader>f :<C-u>call VisualSelection('', '', 'false')<CR>:Rg <C-R>=@/<CR><CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -246,6 +252,11 @@ map <leader>1 1gt
 map <leader>2 2gt
 map <leader>3 3gt
 map <leader>4 4gt
+map <leader>5 5gt
+map <leader>6 6gt
+map <leader>7 7gt
+map <leader>8 8gt
+map <leader>9 9gt
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -397,11 +408,16 @@ function! CmdLine(str)
     call feedkeys(":" . a:str)
 endfunction
 
-function! VisualSelection(direction, extra_filter) range
+function! VisualSelection(direction, extra_filter, escape) range
     let l:saved_reg = @"
     execute "normal! vgvy"
 
-    let l:pattern = escape(@", "\\/.*'$^~[]")
+    if a:escape == 'false'
+        let l:pattern = @"
+    else
+        let l:pattern = escape(@", "\\/.*'$^~[]")
+    endif
+    
     let l:pattern = substitute(l:pattern, "\n$", "", "")
 
     if a:direction == 'gv'

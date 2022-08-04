@@ -69,3 +69,6 @@ autocmd FileType markdown let b:surround_99 = "```\n\r\n```" " b = 98
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>m :SignatureToggle<cr>
 
+" coc.nvim works best on vim >= 8.1.1719 and neovim >= 0.4.0, consider upgrade your vim.
+" You can add this to your vimrc to avoid this message:
+let g:coc_disable_startup_warning = 1

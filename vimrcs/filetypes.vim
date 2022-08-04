@@ -34,6 +34,7 @@ au FileType cpp let b:dispatch = 'make -C build'
 """"""""""""""""""""""""""""""
 " => CMake section
 """"""""""""""""""""""""""""""
+" this doesn't really work when build already exists
 au filetype cmake let b:dispatch = 'mkdir build; cd build; cmake ..'
 
 """"""""""""""""""""""""""""""

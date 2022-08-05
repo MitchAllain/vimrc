@@ -1,11 +1,15 @@
 """"""""""""""""""""""""""""""
 " => NERDTree
 """"""""""""""""""""""""""""""
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+
+" nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTreeTabsToggle<CR>
+
 " not a big fan of stepping on this built-in, but I do need this mapping
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-f> :NERDTreeTabsFind<CR>
 
 " disable these default keymaps, since they
 " conflict with my vim/tmux navigation scheme

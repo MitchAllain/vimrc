@@ -31,6 +31,19 @@ au FileType cpp setlocal shiftwidth=2 softtabstop=2 expandtab
 au FileType cpp let b:dispatch = 'make -C build'
 " au FileType cpp nnoremap <leader>c :Dispatch! make -C build<cr>
 
+" apply clang-format to selection with Ctrl K
+" see https://clang.llvm.org/docs/ClangFormat.html#vim-integration
+map <leader>k :pyf ~/bin/clang-format.py<cr>
+imap <leader>k :pyf ~/bin/clang-format.py<cr>
+
+" automatic clang-format on save
+function! Formatonsave()
+  let l:formatdiff = 1
+  " this is a symlink
+  pyf ~/bin/clang-format.py
+endfunction
+" autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+
 """"""""""""""""""""""""""""""
 " => CMake section
 """"""""""""""""""""""""""""""

@@ -73,11 +73,18 @@ autocmd FileType markdown let b:surround_105 = "*\r*" " i = 105
 autocmd FileType markdown let b:surround_98 = "**\r**" " b = 98
 autocmd FileType markdown let b:surround_99 = "```\n\r\n```" " b = 98
 
+" not sure if this is working yet
+autocmd FileType python let b:surround_100 = "\"\"\"\r\"\"\"" " d = 100
+autocmd FileType python let b:surround_115 = "'''\r'''" " s = 115
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-showmarks
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>m :SignatureToggle<cr>
 
-" coc.nvim works best on vim >= 8.1.1719 and neovim >= 0.4.0, consider upgrade your vim.
-" You can add this to your vimrc to avoid this message:
-let g:coc_disable_startup_warning = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-doge
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:doge_doc_standard_python = 'google'
+

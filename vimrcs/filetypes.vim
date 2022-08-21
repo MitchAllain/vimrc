@@ -33,8 +33,7 @@ au FileType cpp let b:dispatch = 'make -C build'
 
 " apply clang-format to selection with Ctrl K
 " see https://clang.llvm.org/docs/ClangFormat.html#vim-integration
-map <leader>k :pyf ~/bin/clang-format.py<cr>
-imap <leader>k :pyf ~/bin/clang-format.py<cr>
+au Filetype cpp map <leader>f :pyf ~/bin/clang-format.py<cr>
 
 " automatic clang-format on save
 function! Formatonsave()
